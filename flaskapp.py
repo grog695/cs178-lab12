@@ -42,6 +42,7 @@ def analyze(word):
     # Hint: word.lower() converts to lowercase before checking each character
     word.lower()
     vowstring = "aeiou"
+    num_vowels = 0
     for i in word:
         if i in vowstring:
             num_vowels += 1 # replace this with your vowel-counting logic
