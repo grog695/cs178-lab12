@@ -34,9 +34,9 @@ def hello(name):
 @app.route('/analyze/<word>')
 def analyze(word):
     # YOUR CODE HERE
-    for i in len(word):
-        string += i
-    return str(string)
+    num = len(word)
+    string = str(num)
+    return string
     # Count the characters in `word` and return as a string
     # Example: /analyze/Drake  →  should display: 5
     pass
