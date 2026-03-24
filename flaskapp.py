@@ -29,29 +29,28 @@ def hello(name):
 #  Each exercise asks you to add a new @app.route here
 # ============================================================
 
-# ---- Exercise 1: add this to flaskapp.py ----
+
+# ---- Exercise 3: update your analyze route again ----
 
 @app.route('/analyze/<word>')
 def analyze(word):
-    # Step 1: character count (already done)
     num_chars = len(word)
-    string = str(num_chars)
 
-    # Step 2: YOUR CODE HERE
-    # Count vowels (a, e, i, o, u) — case insensitive, y is not a vowel
-    # Hint: word.lower() converts to lowercase before checking each character
-    word.lower()
-    vowstring = "aeiou"
-    num_vowels = 0
-    for i in word:
-        if i in vowstring:
-            num_vowels += 1 # replace this with your vowel-counting logic
+    num_vowels = 0  # your vowel code from Exercise 2
+    for char in word.lower():
+        if char in 'aeiou':
+            num_vowels += 1
 
-    # render_template passes all variables into analyze.html
+    # YOUR CODE HERE
+    # Reverse the word
+    # Hint: Python string slicing with [::-1] reverses a string
+    reversed_word = word[::-1]  # replace this with your reverse logic
+
     return render_template('analyze.html',
                            word=word,
                            num_chars=num_chars,
-                           num_vowels=num_vowels)
+                           num_vowels=num_vowels,
+                           reversed_word=reversed_word)
 
 
 # ============================================================
